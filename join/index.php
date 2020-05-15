@@ -36,11 +36,12 @@ if(!empty($_POST)) {
 }
 
 //書き直し
-if ($_REQUEST['action'] == 'rewrite') {
+if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite') {
 	$_POST = $_SESSION['join'];
 	$error['rewrite'] = true;
 }
 ?>
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -80,7 +81,7 @@ if ($_REQUEST['action'] == 'rewrite') {
 
 				<dt>パスワード<span class="required">必須</span></dt>
 				<dd>
-					<input type="password" name="password" size="10" maxlength="20" value="<?php echo htmlspecialchars($_POST['password'], ENT_QUOTES); ?>" />
+					<input type="password" name="password" size="10" maxlength="20" value="<?php if(isset($_POST['password'])): echo htmlspecialchars($_POST['password'], ENT_QUOTES); endif; ?>" />
 					<?php if(isset($error['password']) && $error['password'] == 'blank'): ?>
 						<p class="error">* パスワードを入力してください</p>
 					<?php endif; ?>
@@ -88,7 +89,6 @@ if ($_REQUEST['action'] == 'rewrite') {
 						<p class="error">* パスワードは４文字以上で入力してください</p>
 					<?php endif; ?>
 				</dd>
-
 				<dt>写真など</dt>
 				<dd>
 					<input type="file" name="image" size="35" />
@@ -100,7 +100,6 @@ if ($_REQUEST['action'] == 'rewrite') {
 					<?php endif; ?>
 				</dd>
 			</dl>
-
 			<div><input type="submit" value="入力内容を確認する" /></div>
 		</form>
 	</div>
