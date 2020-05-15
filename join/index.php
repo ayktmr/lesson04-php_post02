@@ -46,7 +46,7 @@ if(!empty($_POST)) {
 			<dl>
 				<dt>ニックネーム<span class="required">必須</span></dt>
 				<dd>
-					<input type="text" name="name" size="35" maxlength="255" value="<?php if(isset($error['name'])): echo htmlspecialchars($_POST['name'], ENT_QUOTES); endif; ?>" />
+					<input type="text" name="name" size="35" maxlength="255" value="<?php if(isset($_POST['name'])): echo htmlspecialchars($_POST['name'], ENT_QUOTES); endif; ?>" />
 					<?php if(isset($error['name']) && $error['name'] == 'blank'): ?>
 						<p class="error">* ニックネームを入力してください</p>
 					<?php endif; ?>
@@ -54,7 +54,7 @@ if(!empty($_POST)) {
 
 				<dt>メールアドレス<span class="required">必須</span></dt>
 				<dd>
-					<input type="text" name="email" size="35" maxlength="255" value="<?php if(isset($error['email'])): echo htmlspecialchars($_POST['email'], ENT_QUOTES); endif; ?>" />
+					<input type="text" name="email" size="35" maxlength="255" value="<?php if(isset($_POST['email'])): echo htmlspecialchars($_POST['email'], ENT_QUOTES); endif; ?>" />
 					<?php if(isset($error['email']) && $error['email'] == 'blank'): ?>
 						<p class="error">* メールアドレスを入力してください</p>
 					<?php endif; ?>
