@@ -46,8 +46,8 @@ if(!empty($_POST)) {
 			<dl>
 				<dt>ニックネーム<span class="required">必須</span></dt>
 				<dd>
-					<input type="text" name="name" size="35" maxlength="255" value="<?php echo htmlspecialchars($_POST['name'], ENT_QUOTES); ?>" />
-					<?php if($error['name'] == 'blank'): ?>
+					<input type="text" name="name" size="35" maxlength="255" value="<?php if(isset($error['name'])): echo htmlspecialchars($_POST['name'], ENT_QUOTES); endif; ?>" />
+					<?php if(isset($error['name']) && $error['name'] == 'blank'): ?>
 						<p class="error">* ニックネームを入力してください</p>
 					<?php endif; ?>
 				</dd>
@@ -63,10 +63,10 @@ if(!empty($_POST)) {
 				<dt>パスワード<span class="required">必須</span></dt>
 				<dd>
 					<input type="password" name="password" size="10" maxlength="20" value="<?php echo htmlspecialchars($_POST['password'], ENT_QUOTES); ?>" />
-					<?php if($error['password'] == 'blank'): ?>
+					<?php if(isset($error['password']) && $error['password'] == 'blank'): ?>
 						<p class="error">* パスワードを入力してください</p>
 					<?php endif; ?>
-					<?php if($error['password'] == 'length'): ?>
+					<?php if(isset($error['password']) && $error['password'] == 'length'): ?>
 						<p class="error">* パスワードは４文字以上で入力してください</p>
 					<?php endif; ?>
 				</dd>
