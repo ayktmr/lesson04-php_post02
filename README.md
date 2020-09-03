@@ -10,5 +10,5 @@
 ##### ブランチ：[feature/db-challenge2](https://github.com/ayktmr/quelcode-db/tree/feature/db-challenge2)
 
 #### 課題③：課題内容に沿うSQL文の作成
-##### ブランチ：[feature/db-challenge2](https://github.com/ayktmr/quelcode-db/tree/feature/db-challenge2)
-
+##### ブランチ：[feature/db-challenge3](https://github.com/ayktmr/quelcode-db/tree/feature/db-challenge3)
+---
